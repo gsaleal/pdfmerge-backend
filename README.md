@@ -1,33 +1,46 @@
-# PDF Merge Backend
+# PDFMerge Backend
 
-Este é um serviço backend que permite mesclar múltiplos arquivos PDF em um único arquivo. O serviço inclui uma API RESTful para realizar operações de mesclagem de PDFs e gerenciar o histórico das operações.
+Este é um serviço de mesclagem de PDFs construído com **Spring Boot**, **Kafka** e **PostgreSQL**. Ele recebe arquivos PDF, processa a mesclagem de forma assíncrona e retorna um link para download.
 
+## 📌 Funcionalidades
+- Upload de arquivos PDF para mesclagem
+- Processamento assíncrono com **Kafka**
+- Histórico de operações armazenado no banco de dados
+- Retorno de um link para download do PDF final
 
-## Necessário criar o topico pdf-merge-group no kafka
+## 🚀 Tecnologias
+- **Java 17** + **Spring Boot**
+- **Kafka** para processamento assíncrono
+- **PostgreSQL** para armazenamento
+- **Docker** para ambiente conteinerizado
 
-## Funcionalidades
+## ⚙️ Configuração do Projeto
 
-- **Mesclar arquivos PDF**: Aceita múltiplos arquivos PDF e os mescla em um único PDF.
-- **Histórico de mesclagem**: Armazena o histórico de todas as operações de mesclagem com detalhes sobre os arquivos mesclados e o link de download.
+### Pré-requisitos
+Certifique-se de ter instalado:
+- **JDK 17+**
+- **Docker** e **Docker Compose**
+- **Kafka** e **Zookeeper**
+- **PostgreSQL**
 
-## Endpoints da API
+### Passos para rodar o projeto localmente
 
-### `POST /api/pdf/merge`
-Este endpoint aceita múltiplos arquivos PDF e os mescla em um único arquivo.
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/gsaleal/pdfmerge-backend.git
+   cd pdfmerge-backend
+   ```
 
-#### Request
-- **URL**: `/api/pdf/merge`
-- **Método**: `POST`
-- **Body**:
-  - **files**: Lista de arquivos PDF (multipart).
-  - **outputFileName**: Nome desejado para o arquivo de saída.
+2. Configure as variáveis de ambiente no arquivo .env:
+ ```env
+  DB_HOST=localhost
+  DB_PORT=5432
+  DB_USER=admin
+  DB_PASS=secret
+  KAFKA_BROKER=localhost:9092
+```
 
-#### Exemplo de Request no Postman:
-```json
-{
-  "files": [
-    "file1.pdf",
-    "file2.pdf"
-  ],
-  "outputFileName": "mesclado.pdf"
-}
+3. A API estará disponível em:
+  ```http
+  http://localhost:8080
+  ```
