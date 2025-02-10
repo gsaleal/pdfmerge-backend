@@ -30,15 +30,6 @@ Certifique-se de ter instalado:
    git clone https://github.com/gsaleal/pdfmerge-backend.git
    cd pdfmerge-backend
    ```
-(frontend)
-2. Configure as variáveis de ambiente no arquivo .env:
- ```env
-  DB_HOST=localhost
-  DB_PORT=5432
-  DB_USER=admin
-  DB_PASS=secret
-  KAFKA_BROKER=localhost:9092
-```
 
 3. A API estará disponível em:
   ```http
