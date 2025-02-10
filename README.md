@@ -30,7 +30,7 @@ Certifique-se de ter instalado:
    git clone https://github.com/gsaleal/pdfmerge-backend.git
    cd pdfmerge-backend
    ```
-
+(frontend)
 2. Configure as variáveis de ambiente no arquivo .env:
  ```env
   DB_HOST=localhost
