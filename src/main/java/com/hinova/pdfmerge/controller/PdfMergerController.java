@@ -17,7 +17,8 @@ public class PdfMergerController {
     private final PdfMergerService pdfMergerService;
 
     @PostMapping("/merge")
-    public ResponseEntity<PdfMergeResponseDTO> mergePdfs(@RequestParam("files") List<MultipartFile> files, @RequestParam("outputFileName") String outputFileName) {
+    public ResponseEntity<PdfMergeResponseDTO> mergePdfs(@RequestParam("files") List<MultipartFile> files,
+                                                         @RequestParam("outputFileName") String outputFileName) {
         PdfMergeResponseDTO response = pdfMergerService.mergePdfs(files, outputFileName);
         return ResponseEntity.ok(response);
     }
