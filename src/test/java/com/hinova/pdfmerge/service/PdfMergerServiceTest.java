@@ -23,8 +23,6 @@ class PdfMergerServiceTest {
     @Mock
     private PdfMergeHistoryRepository pdfMergeHistoryRepository;
 
-    @Mock
-    private KafkaProducerService kafkaProducerService;
 
     @InjectMocks
     private PdfMergerService pdfService;
