@@ -1,7 +1,9 @@
 # PDF Merge Backend
 
 Este é um serviço backend que permite mesclar múltiplos arquivos PDF em um único arquivo. O serviço inclui uma API RESTful para realizar operações de mesclagem de PDFs e gerenciar o histórico das operações.
-Necessário criar o topico pdf-merge-group no kafka
+
+
+## Necessário criar o topico pdf-merge-group no kafka
 
 ## Funcionalidades
 
